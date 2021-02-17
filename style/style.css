@@ -741,8 +741,8 @@ footer .container div .icons {
 
 .projects {
   text-align: center;
-  background-color: #222;
-  padding: 80px 0;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 .projects .container {

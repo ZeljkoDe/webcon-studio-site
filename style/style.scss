@@ -535,15 +535,15 @@ footer {
 
 .projects {
   text-align: center;
-  background-color: $bgDark;
-  padding: $padding;
+  padding-top: 20px;
+  padding-bottom: 50px;
   .container {
     display: grid;
     gap: 20px;
     grid-template-areas:
       "other other"
       "main info";
-
+    // z-index: -99;
     grid-template-columns: 70% 1fr;
     .mainImg {
       grid-area: main;
