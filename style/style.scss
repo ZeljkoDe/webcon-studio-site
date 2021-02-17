@@ -1,0 +1,577 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,500&display=swap");
+
+//*** variables
+$neonYellow: #ffff00;
+$yellow: #e6fb04;
+$neonRed: #ff0000;
+$red: #ff3300;
+$neonGreen: #00ff00; // #cc00ff;
+$green: #00ff66; // #9d00ff;
+$neonBlue: #00ffff;
+$blue: #0062ff;
+
+$bgDark: #222;
+$bgLight: #92919163;
+
+$textClr: #fff;
+
+$fontFamily: "Poppins", sans-serif;
+$fontFamily2: "Lobster", cursive;
+$fontSize: 16px;
+$padding: 80px 0;
+
+$hover-width: 0 0 75%;
+$other-width: 0 0 25%;
+
+// *** mixins
+@mixin flex($flex-D, $flex-J, $flex-A) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: $flex-D;
+  justify-content: $flex-J;
+  align-items: $flex-A;
+}
+@mixin btn {
+  padding: 10px 20px;
+  background-color: $neonYellow;
+  box-shadow: 4px 4px 10px $yellow;
+  border: none;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+
+// *** basic
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $bgDark;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  // overflow: hidden;
+  color: $textClr;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: $yellow;
+  &:hover {
+    // text-decoration: underline;
+    opacity: 0.6;
+  }
+}
+ul li {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+h3 {
+  position: absolute;
+  top: 53%;
+  font-size: clamp(1rem, calc(1.5vw + 1.5rem), 3rem);
+  text-align: center;
+  color: $neonYellow;
+  text-shadow: -4px -4px 1px black;
+  font-weight: 700;
+}
+h4 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  text-shadow: -1px -1px 2px black;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: -25px;
+    width: 80px;
+    transform: rotate(-45deg);
+    border: 2px solid $neonGreen;
+    box-shadow: 0 0 8px $green;
+    z-index: -1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    width: 60px;
+    transform: rotate(-45deg);
+    border: 2px solid $neonGreen;
+    box-shadow: 0 0 8px $green;
+    z-index: -1;
+  }
+}
+
+/*** nav ***/
+nav {
+  background-color: rgba(34, 34, 34, 0.801);
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  padding: 10px 0;
+  backdrop-filter: blur(2px);
+  .container {
+    @include flex(row, space-between, center);
+    h1 {
+      font-size: 1.8rem;
+      color: $neonYellow;
+      text-shadow: 0 0 5px $yellow;
+      span {
+        color: $neonGreen;
+        text-shadow: none;
+      }
+    }
+    ul {
+      @include flex(row, space-between, center);
+      li {
+        margin-left: 50px;
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+/*** header ***/
+header {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  hgroup {
+    @include flex(column, center, center);
+    height: 95vh;
+    position: relative;
+    h2 {
+      font-size: clamp(3rem, calc(5vw + 5rem), 10rem);
+      color: rgba(255, 255, 255, 0.267);
+      line-height: 86%;
+      align-self: flex-start;
+      text-transform: uppercase;
+      span {
+        background: rgba(255, 255, 255, 0.267);
+        color: $textClr;
+        text-shadow: -6px -6px 1px $bgDark;
+      }
+    }
+  }
+  .line2 {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 2px solid $neonGreen;
+    box-shadow: 0 0 6px $neonGreen;
+    transform: rotate(60deg);
+    transform-origin: right;
+    z-index: -10;
+  }
+  .line3 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $neonYellow;
+    box-shadow: 0 0 6px $yellow;
+    transform: rotate(-60deg);
+    transform-origin: center;
+    z-index: -10;
+  }
+}
+
+/*** tech ***/
+.tech {
+  padding: $padding;
+  background: $bgLight;
+  position: relative;
+  z-index: -99;
+  text-align: center;
+  .container {
+    @include flex(row, space-around, center);
+    article {
+      flex: 0 0 50%;
+      @include flex(row, space-evenly, center);
+      div {
+        border-radius: 5px;
+        padding: 20px;
+        font-weight: 300;
+        flex: 30%;
+        i {
+          color: $yellow;
+          text-shadow: -4px -4px 5px $bgDark;
+        }
+      }
+    }
+    .text {
+      flex: 0 0 20%;
+    }
+  }
+}
+
+/*** services ***/
+.services {
+  padding: $padding;
+  height: auto;
+  text-align: center;
+  .container {
+    @include flex(row, center, center);
+    .card {
+      background-color: $bgLight;
+      height: 40vh;
+      cursor: pointer;
+      flex: 1;
+      margin: 5px;
+      position: relative;
+      overflow: hidden;
+      transition: flex 0.7s ease-in;
+      &::before {
+        position: absolute;
+        transform: rotate(50deg);
+        top: -30px;
+        right: -20px;
+        content: "";
+        border: 1px solid $neonGreen;
+        box-shadow: 0 0 2px $neonGreen;
+        height: 150px;
+        width: 150px;
+        z-index: -1;
+      }
+      &::after {
+        position: absolute;
+        transform: rotate(45deg);
+        top: -50px;
+        left: -20px;
+        content: "";
+        border: 1px solid $yellow;
+        box-shadow: 0 0 2px $neonYellow;
+        height: 100px;
+        width: 100px;
+        z-index: -1;
+      }
+      &.active {
+        flex: 5;
+        h5 {
+          opacity: 1;
+          font-weight: 300;
+          font-size: 1.8rem;
+          transition: opacity 0.3s ease-in 0.4s;
+          margin: 25px 0;
+        }
+        p {
+          opacity: 1;
+          transition: opacity 0.3s ease-in 0.4s;
+          padding: 0 40px;
+          text-align: justify;
+        }
+        i {
+          color: $neonGreen;
+          // text-shadow: 1px 0 1px $green;
+          text-shadow: -3px -3px 2px black;
+          transition: all 0.3s ease-in 0.4s;
+        }
+      }
+      h5 {
+        opacity: 0;
+      }
+      p {
+        opacity: 0;
+      }
+      i {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: $yellow;
+      }
+    }
+  }
+}
+
+/*** pricing ***/
+.pricing {
+  padding: $padding;
+  overflow: hidden;
+  .container {
+    @include flex(row, space-between, center);
+    article:first-child {
+      flex: 20%;
+      button {
+        @include btn;
+      }
+    }
+    article:last-child {
+      flex: 80%;
+      @include flex(row, stretch, stretch);
+      .priceCard {
+        background-color: $bgLight;
+        margin: 10px;
+        padding: 20px;
+        flex: 20%;
+        h5 {
+          font-size: 1.8rem;
+        }
+        .cena {
+          font-size: 2.8rem;
+          text-align: center;
+          font-weight: 700;
+          sup {
+            font-weight: 300;
+          }
+        }
+        ul {
+          text-align: center;
+        }
+      }
+      .priceCard:nth-child(even) {
+        background-color: $yellow;
+        color: $bgDark;
+      }
+    }
+  }
+}
+
+/*** footer ***/
+footer {
+  padding-bottom: 80px;
+  hr {
+    border: 1px solid $neonGreen;
+    box-shadow: 0 0 5px $green;
+    margin-bottom: 80px;
+    margin-top: 0;
+  }
+  .container {
+    @include flex(row, space-around, flex-start);
+    div {
+      flex: 20%;
+      height: 100%;
+      margin: 0 10px;
+      text-align: center;
+      line-height: 1.5;
+      h5 {
+        font-weight: 300;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+      p {
+        text-align: justify;
+        i {
+          margin-right: 10px;
+        }
+      }
+      .icons {
+        font-size: 2.5rem;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+/*** team ***/
+.team {
+  height: 90vh;
+  padding: $padding;
+  text-align: center;
+  h4 {
+    margin-bottom: 90px;
+  }
+  .container {
+    @include flex(row, space-between, stretch);
+    article {
+      max-width: 350px;
+      background: $bgLight;
+      max-height: 65px;
+      padding: 20px;
+      text-align: start;
+      // box-shadow: -5px -5px 5px $neonGreen;
+      border-right: 2px solid $neonGreen;
+      border-bottom: 2px solid $neonGreen;
+      // position: relative;
+      flex: 0 0 50%;
+      border-radius: 10px 0 0 10px;
+
+      a {
+        opacity: 0;
+      }
+      &:hover {
+        max-height: 125px;
+        a {
+          opacity: 1;
+          font-size: 2rem;
+          margin-left: 20px;
+          text-shadow: 2px 2px 5px black;
+        }
+      }
+      .circle {
+        float: right;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        position: relative;
+        // box-shadow: 5px -5px 5px $neonYellow;
+        border: 2px solid $neonYellow;
+        // shape-outside: url(../team1.jpg);
+        // shape-margin: 2rem;
+        // clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        margin: -50px -50px 0 0;
+      }
+      h5 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        // margin-top: 30px;
+      }
+    }
+  }
+}
+
+.info {
+  padding: $padding;
+  .container {
+    display: grid;
+    grid-template-areas:
+      "why online trust"
+      "why online line"
+      "money money line";
+    grid-template-columns: 30% 30% 1fr;
+    // grid-template-rows: ;
+    gap: 20px;
+    .why {
+      grid-area: why;
+      background: $yellow;
+      padding: 20px;
+      color: $bgDark;
+      // position: relative;
+      // z-index: 1;
+      // overflow: hidden;
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   border: 10px double $neonGreen;
+      //   height: 120%;
+      //   width: 90%;
+      //   top: 4%;
+      //   left: 10%;
+      //   z-index: -1;
+      h4 {
+        color: $bgDark;
+        font-size: 3rem;
+        line-height: 0.8;
+      }
+    }
+    .trust {
+      grid-area: trust;
+    }
+    .money {
+      grid-area: money;
+    }
+    .online {
+      grid-area: online;
+    }
+    .line {
+      grid-area: line;
+      background: $bgLight;
+      // text-align: center;
+      // position: relative;
+      // overflow: hidden;
+      // z-index: 1;
+      @include flex(row, center, center);
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   border: 10px double $yellow;
+      //   box-shadow: 0 0 5px $neonYellow;
+      //   height: 90%;
+      //   width: 90%;
+      //   top: -4%;
+      //   right: 10%;
+      //   z-index: -1;
+      // }
+      h4 {
+        color: $yellow;
+        text-shadow: 4px 4px 1px $bgDark;
+        font-size: 5rem;
+        line-height: 0.8;
+        text-transform: uppercase;
+        padding: 50px;
+      }
+    }
+    h4 {
+      font-size: 1.5rem;
+      color: $yellow;
+      // text-shadow: -2px -2px 1px $bgDark;
+      margin-bottom: 10px;
+      text-transform: none;
+      font-weight: 700;
+      letter-spacing: 3px;
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+    p {
+      font-size: 1rem;
+      text-align: justify;
+    }
+  }
+}
+
+.blogHeader,
+.aboutHeader {
+  @extend header;
+  height: 50vh;
+}
+
+.projects {
+  text-align: center;
+  background-color: $bgLight;
+  padding: $padding;
+  .container {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "main info"
+      "other other";
+    grid-template-columns: 60% 1fr;
+    .mainImg {
+      grid-area: main;
+      border: 1px solid #fff;
+      height: 65vh;
+    }
+    .infoImg {
+      grid-area: info;
+      // border: 1px solid #fff;
+      overflow: hidden;
+      height: 65vh;
+      background-color: $bgDark;
+      // box-shadow: 10px -10px 0 $neonYellow;
+      position: relative;
+      .infoBg {
+        font-size: 8rem;
+        // color: $neonYellow;
+        color: $bgLight;
+        font-weight: 700;
+        position: absolute;
+        top: -55px;
+        right: -10px;
+        z-index: 3;
+      }
+    }
+    .otherImg {
+      grid-area: other;
+      border: 1px solid #fff;
+      height: 25vh;
+    }
+  }
+}
