@@ -11,7 +11,7 @@ $neonBlue: #00ffff;
 $blue: #0062ff;
 
 $bgDark: #222;
-$bgLight: #92919163;
+$bgLight: #4d4c4c;
 
 $textClr: #fff;
 
@@ -247,10 +247,10 @@ header {
         right: -20px;
         content: "";
         border: 1px solid $neonGreen;
-        box-shadow: 0 0 2px $neonGreen;
+        box-shadow: 0 0 3px $neonGreen;
         height: 150px;
         width: 150px;
-        z-index: -1;
+        z-index: 1;
       }
       &::after {
         position: absolute;
@@ -259,10 +259,10 @@ header {
         left: -20px;
         content: "";
         border: 1px solid $yellow;
-        box-shadow: 0 0 2px $neonYellow;
+        box-shadow: 0 0 3px $neonYellow;
         height: 100px;
         width: 100px;
-        z-index: -1;
+        z-index: 1;
       }
       &.active {
         flex: 5;
@@ -383,61 +383,61 @@ footer {
 }
 
 /*** team ***/
-.team {
-  height: 90vh;
-  padding: $padding;
-  text-align: center;
-  h4 {
-    margin-bottom: 90px;
-  }
-  .container {
-    @include flex(row, space-between, stretch);
-    article {
-      max-width: 350px;
-      background: $bgLight;
-      max-height: 65px;
-      padding: 20px;
-      text-align: start;
-      // box-shadow: -5px -5px 5px $neonGreen;
-      border-right: 2px solid $neonGreen;
-      border-bottom: 2px solid $neonGreen;
-      // position: relative;
-      flex: 0 0 50%;
-      border-radius: 10px 0 0 10px;
+// .team {
+//   height: 90vh;
+//   padding: $padding;
+//   text-align: center;
+//   h4 {
+//     margin-bottom: 90px;
+//   }
+//   .container {
+//     @include flex(row, space-between, stretch);
+//     article {
+//       max-width: 350px;
+//       background: $bgLight;
+//       max-height: 65px;
+//       padding: 20px;
+//       text-align: start;
+//       // box-shadow: -5px -5px 5px $neonGreen;
+//       border-right: 2px solid $neonGreen;
+//       border-bottom: 2px solid $neonGreen;
+//       // position: relative;
+//       flex: 0 0 50%;
+//       border-radius: 10px 0 0 10px;
 
-      a {
-        opacity: 0;
-      }
-      &:hover {
-        max-height: 125px;
-        a {
-          opacity: 1;
-          font-size: 2rem;
-          margin-left: 20px;
-          text-shadow: 2px 2px 5px black;
-        }
-      }
-      .circle {
-        float: right;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        position: relative;
-        // box-shadow: 5px -5px 5px $neonYellow;
-        border: 2px solid $neonYellow;
-        // shape-outside: url(../team1.jpg);
-        // shape-margin: 2rem;
-        // clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        margin: -50px -50px 0 0;
-      }
-      h5 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-        // margin-top: 30px;
-      }
-    }
-  }
-}
+//       a {
+//         opacity: 0;
+//       }
+//       &:hover {
+//         max-height: 125px;
+//         a {
+//           opacity: 1;
+//           font-size: 2rem;
+//           margin-left: 20px;
+//           text-shadow: 2px 2px 5px black;
+//         }
+//       }
+//       .circle {
+//         float: right;
+//         width: 200px;
+//         height: 200px;
+//         border-radius: 50%;
+//         position: relative;
+//         // box-shadow: 5px -5px 5px $neonYellow;
+//         border: 2px solid $neonYellow;
+//         // shape-outside: url(../team1.jpg);
+//         // shape-margin: 2rem;
+//         // clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+//         margin: -50px -50px 0 0;
+//       }
+//       h5 {
+//         font-size: 1.3rem;
+//         margin-bottom: 10px;
+//         // margin-top: 30px;
+//       }
+//     }
+//   }
+// }
 
 .info {
   padding: $padding;
@@ -536,203 +536,8 @@ footer {
   height: 50vh;
 }
 
-.projects {
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  .container {
-    display: grid;
-    gap: 20px;
-    grid-template-areas:
-      "other other"
-      "main info";
-    grid-template-columns: 70% 1fr;
-    .mainImg {
-      grid-area: main;
-      height: auto;
-    }
-    .infoImg {
-      grid-area: info;
-      padding: 20px;
-      overflow: hidden;
-      height: auto;
-      background-color: $bgDark;
-      color: $bgLight;
-      // box-shadow: 10px -10px 0 $neonYellow;
-      position: relative;
-      .infoBg {
-        font-size: 8rem;
-        // color: $neonYellow;
-        color: $bgLight;
-        font-weight: 700;
-        position: absolute;
-        top: -55px;
-        right: -10px;
-        // z-index: 3;
-      }
-      .textBox {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-areas:
-          "."
-          "text1"
-          "text2";
-        grid-template-rows: 0.5fr 1fr 1fr;
-        // justify-content: fle;
-        // align-content: flex-end;
-        h6 {
-          // flex: 0 0 50%;
-          font-size: 1.2rem;
-          // text-decoration: underline;
-          border-bottom: 1px solid $yellow;
-          font-weight: 300;
-        }
-        p {
-          // flex: 0 0 50%;
-          font-style: italic;
-          font-size: 1.5rem;
-          color: $textClr;
-        }
-        .text1 {
-          grid-area: text1;
-          align-self: center;
-        }
-        .text2 {
-          grid-area: text2;
-          // align-content: top;
-        }
-      }
-    }
-    .otherImg {
-      grid-area: other;
-      overflow: hidden;
-      height: 25vh;
-      @include flex(row, space-between, center);
-      flex-wrap: nowrap;
-      position: relative;
-      .desno {
-        position: absolute;
-        font-size: 2.5rem;
-        color: $yellow;
-        height: auto;
-        width: 60px;
-        right: 0;
-        background: rgba(34, 34, 34, 0.87);
-        cursor: pointer;
-        &:hover {
-          font-size: 2rem;
-        }
-      }
-      .levo {
-        position: absolute;
-        font-size: 2.5rem;
-        color: $yellow;
-        height: auto;
-        width: 60px;
-        left: 0;
-        background: rgba(34, 34, 34, 0.87);
-        &:hover {
-          font-size: 2rem;
-          cursor: pointer;
-        }
-      }
-      .images {
-        // display: block;
-        // height: 100%;
-        position: relative;
-        flex: 0 0 30%;
-        transition: transform 1.5s ease;
-        img {
-          filter: grayscale(96%);
-        }
-        &.pro {
-          &::after {
-            content: "pro";
-            font-size: 1.5rem;
-            color: $bgDark;
-            position: absolute;
-            top: -5px;
-            right: 20%;
-            height: 50px;
-            width: auto;
-            background: $yellow;
-            box-shadow: 2px 2px 1px $bgDark;
-            // z-index: 2;
-            // filter: grayscale(-100%);f
-          }
-        }
-      }
-    }
-  }
-}
+@import "projects";
+@import "blog";
 
-.blog {
-  height: auto;
-  box-shadow: 0px -5px 8px black, 0px 5px 8px black;
-  background: linear-gradient(
-    to right,
-    $bgDark 0%,
-    $bgDark 50%,
-    $bgLight 50%,
-    $bgLight 100%
-  );
-  .container {
-    @include flex(row, space-between, flex-start);
-    div {
-      flex: 0 0 70%;
-      background-color: $bgDark;
-      // box-shadow: 50px 0px 5px black;
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-      // outline: 20px solid yellow;
-      // border: 1px solid white;
-      &::after {
-        content: "posts";
-        position: absolute;
-        font-size: 8rem;
-        font-weight: 700;
-        bottom: -40px;
-        right: -18px;
-        color: $bgLight;
-      }
-      article {
-        padding: 0 20px;
-        margin: 50px 50px 20px 0px;
-        // border-left: 1px solid $yellow;
-        // border-right: 1px solid $yellow;
-        h5 {
-          font-size: 2.5rem;
-        }
-        p:first-of-type {
-          margin: 20px 0;
-          // text-decoration: underline;
-          border-bottom: 2px solid $yellow;
-          display: inline-block;
-        }
-        button {
-          @include btn;
-          margin-bottom: 50px;
-        }
-      }
-    }
-    aside {
-      flex: 0 0 30%;
-      // border: 1px solid white;
-      background-color: #4d4c4c;
-      height: 100%;
-      align-self: flex-start;
-      font-weight: 200;
-      font-size: 2rem;
-      padding: 50px;
-      font-style: italic;
-      ul {
-        li {
-          font-size: 1.2rem;
-          font-style: normal;
-        }
-      }
-    }
-  }
+.about {
 }

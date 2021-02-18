@@ -226,7 +226,7 @@ header .line3, .blogHeader .line3, .aboutHeader .line3 {
   -webkit-box-shadow: 0px -5px 8px black, 0px 5px 8px black;
           box-shadow: 0px -5px 8px black, 0px 5px 8px black;
   padding: 80px 0;
-  background: #92919163;
+  background: #4d4c4c;
   position: relative;
   z-index: -99;
   text-align: center;
@@ -316,7 +316,7 @@ header .line3, .blogHeader .line3, .aboutHeader .line3 {
 }
 
 .services .container .card {
-  background-color: #92919163;
+  background-color: #4d4c4c;
   height: 40vh;
   cursor: pointer;
   -webkit-box-flex: 1;
@@ -339,11 +339,11 @@ header .line3, .blogHeader .line3, .aboutHeader .line3 {
   right: -20px;
   content: "";
   border: 1px solid #00ff00;
-  -webkit-box-shadow: 0 0 2px #00ff00;
-          box-shadow: 0 0 2px #00ff00;
+  -webkit-box-shadow: 0 0 3px #00ff00;
+          box-shadow: 0 0 3px #00ff00;
   height: 150px;
   width: 150px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .services .container .card::after {
@@ -354,11 +354,11 @@ header .line3, .blogHeader .line3, .aboutHeader .line3 {
   left: -20px;
   content: "";
   border: 1px solid #e6fb04;
-  -webkit-box-shadow: 0 0 2px #ffff00;
-          box-shadow: 0 0 2px #ffff00;
+  -webkit-box-shadow: 0 0 3px #ffff00;
+          box-shadow: 0 0 3px #ffff00;
   height: 100px;
   width: 100px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .services .container .card.active {
@@ -474,7 +474,7 @@ header .line3, .blogHeader .line3, .aboutHeader .line3 {
 }
 
 .pricing .container article:last-child .priceCard {
-  background-color: #92919163;
+  background-color: #4d4c4c;
   margin: 10px;
   padding: 20px;
   -webkit-box-flex: 20%;
@@ -565,78 +565,6 @@ footer .container div .icons {
 }
 
 /*** team ***/
-.team {
-  height: 90vh;
-  padding: 80px 0;
-  text-align: center;
-}
-
-.team h4 {
-  margin-bottom: 90px;
-}
-
-.team .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-
-.team .container article {
-  max-width: 350px;
-  background: #92919163;
-  max-height: 65px;
-  padding: 20px;
-  text-align: start;
-  border-right: 2px solid #00ff00;
-  border-bottom: 2px solid #00ff00;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
-  border-radius: 10px 0 0 10px;
-}
-
-.team .container article a {
-  opacity: 0;
-}
-
-.team .container article:hover {
-  max-height: 125px;
-}
-
-.team .container article:hover a {
-  opacity: 1;
-  font-size: 2rem;
-  margin-left: 20px;
-  text-shadow: 2px 2px 5px black;
-}
-
-.team .container article .circle {
-  float: right;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  position: relative;
-  border: 2px solid #ffff00;
-  margin: -50px -50px 0 0;
-}
-
-.team .container article h5 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
 .info {
   padding: 80px 0;
 }
@@ -691,7 +619,7 @@ footer .container div .icons {
   -ms-grid-row-span: 2;
   -ms-grid-column: 3;
   grid-area: line;
-  background: #92919163;
+  background: #4d4c4c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -771,13 +699,13 @@ footer .container div .icons {
   overflow: hidden;
   height: auto;
   background-color: #222;
-  color: #92919163;
+  color: #4d4c4c;
   position: relative;
 }
 
 .projects .container .infoImg .infoBg {
   font-size: 8rem;
-  color: #92919163;
+  color: #4d4c4c;
   font-weight: 700;
   position: absolute;
   top: -55px;
@@ -912,8 +840,8 @@ footer .container div .icons {
   height: auto;
   -webkit-box-shadow: 0px -5px 8px black, 0px 5px 8px black;
           box-shadow: 0px -5px 8px black, 0px 5px 8px black;
-  background: -webkit-gradient(linear, left top, right top, from(#222), color-stop(50%, #222), color-stop(50%, #92919163), to(#92919163));
-  background: linear-gradient(to right, #222 0%, #222 50%, #92919163 50%, #92919163 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#222), color-stop(50%, #222), color-stop(50%, #4d4c4c), to(#4d4c4c));
+  background: linear-gradient(to right, #222 0%, #222 50%, #4d4c4c 50%, #4d4c4c 100%);
 }
 
 .blog .container {
@@ -926,9 +854,9 @@ footer .container div .icons {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -936,8 +864,8 @@ footer .container div .icons {
 
 .blog .container div {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 70%;
-          flex: 0 0 70%;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
   background-color: #222;
   position: relative;
   overflow: hidden;
@@ -951,11 +879,10 @@ footer .container div .icons {
   font-weight: 700;
   bottom: -40px;
   right: -18px;
-  color: #92919163;
+  color: #4d4c4c;
 }
 
 .blog .container div article {
-  padding: 0 20px;
   margin: 50px 50px 20px 0px;
 }
 
@@ -988,8 +915,8 @@ footer .container div .icons {
 
 .blog .container aside {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 30%;
-          flex: 0 0 30%;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
   background-color: #4d4c4c;
   height: 100%;
   -ms-flex-item-align: start;
@@ -1001,7 +928,8 @@ footer .container div .icons {
 }
 
 .blog .container aside ul li {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-style: normal;
+  margin-bottom: 15px;
 }
 /*# sourceMappingURL=style.css.map */
