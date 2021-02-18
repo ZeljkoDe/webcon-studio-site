@@ -95,7 +95,7 @@ imgs.forEach(function (img) {
     });
     next.addEventListener('click', function () {
         console.log('clicked');
-        img.style.transform = 'translateX(-270%)';
+        img.style.transform = 'translateX(-265%)';
     });
     prev.addEventListener('click', function () {
         console.log('clicked');
