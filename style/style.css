@@ -761,10 +761,6 @@ footer .container div .icons {
   height: auto;
 }
 
-.projects .container .mainImg img {
-  height: 100%;
-}
-
 .projects .container .infoImg {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -828,6 +824,7 @@ footer .container div .icons {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: other;
+  overflow: hidden;
   height: 25vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -838,27 +835,65 @@ footer .container div .icons {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-}
-
-.projects .container .otherImg div {
-  height: 100%;
-  width: auto;
   position: relative;
 }
 
-.projects .container .otherImg div img {
+.projects .container .otherImg .desno {
+  position: absolute;
+  font-size: 2.5rem;
+  color: #e6fb04;
+  height: auto;
+  width: 60px;
+  right: 0;
+  background: rgba(34, 34, 34, 0.87);
+  cursor: pointer;
+}
+
+.projects .container .otherImg .desno:hover {
+  font-size: 2rem;
+}
+
+.projects .container .otherImg .levo {
+  position: absolute;
+  font-size: 2.5rem;
+  color: #e6fb04;
+  height: auto;
+  width: 60px;
+  left: 0;
+  background: rgba(34, 34, 34, 0.87);
+}
+
+.projects .container .otherImg .levo:hover {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.projects .container .otherImg .images {
+  display: block;
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  -webkit-transition: -webkit-transform 1.5s ease;
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+}
+
+.projects .container .otherImg .images img {
   -webkit-filter: grayscale(96%);
           filter: grayscale(96%);
 }
 
-.projects .container .otherImg div.premium::after {
+.projects .container .otherImg .images.pro::after {
   content: "pro";
   font-size: 1.5rem;
   color: #222;

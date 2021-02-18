@@ -543,27 +543,14 @@ footer {
     grid-template-areas:
       "other other"
       "main info";
-    // z-index: -99;
     grid-template-columns: 70% 1fr;
     .mainImg {
       grid-area: main;
-      // border: 1px solid #fff;
       height: auto;
-      // align-content: center;
-      // background-image: url(../webcon.png);
-      // background-size: cover;
-      // background-position: center;
-      img {
-        // display: block;
-        // margin: auto;
-        // align-content: center;
-        height: 100%;
-      }
     }
     .infoImg {
       grid-area: info;
       padding: 20px;
-      // border: 1px solid #fff;
       overflow: hidden;
       height: auto;
       background-color: $bgDark;
@@ -613,41 +600,50 @@ footer {
           // align-content: top;
         }
       }
-
-      // .text {
-      //   // display: block;
-      //   @include flex(column, center, flex-start);
-      //   // height: 45%;
-      //   h6 {
-      //     // flex: 0 0 50%;
-      //     font-size: 1.2rem;
-      //     // text-decoration: underline;
-      //     border-bottom: 1px solid $yellow;
-      //     font-weight: 300;
-      //   }
-      //   p {
-      //     // flex: 0 0 50%;
-      //     font-style: italic;
-      //     font-size: 1.7rem;
-      //     color: $textClr;
-      //   }
-      // }
     }
     .otherImg {
       grid-area: other;
-      // border: 1px solid #fff;
+      overflow: hidden;
+
       height: 25vh;
-      @include flex(row, space-around, center);
+      @include flex(row, space-between, center);
       flex-wrap: nowrap;
-      div {
-        height: 100%;
-        width: auto;
+      position: relative;
+      .desno {
+        position: absolute;
+        font-size: 2.5rem;
+        color: $yellow;
+        height: auto;
+        width: 60px;
+        right: 0;
+        background: rgba(34, 34, 34, 0.87);
+        cursor: pointer;
+        &:hover {
+          font-size: 2rem;
+        }
+      }
+      .levo {
+        position: absolute;
+        font-size: 2.5rem;
+        color: $yellow;
+        height: auto;
+        width: 60px;
+        left: 0;
+        background: rgba(34, 34, 34, 0.87);
+        &:hover {
+          font-size: 2rem;
+          cursor: pointer;
+        }
+      }
+      .images {
+        display: block;
         position: relative;
-        // z-index: 1;
+        flex: 0 0 30%;
+        transition: transform 1.5s ease;
         img {
           filter: grayscale(96%);
         }
-        &.premium {
+        &.pro {
           &::after {
             content: "pro";
             font-size: 1.5rem;
