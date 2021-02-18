@@ -39,7 +39,7 @@ img {
 h3 {
   position: absolute;
   top: 53%;
-  font-size: clamp(1rem, calc(1.5vw + 1.5rem), 3rem);
+  font-size: clamp(1rem, calc(1.5vw + 1.8rem), 5rem);
   text-align: center;
   color: #ffff00;
   text-shadow: -4px -4px 1px black;
@@ -223,6 +223,8 @@ header .line3, .blogHeader .line3, .aboutHeader .line3 {
 
 /*** tech ***/
 .tech {
+  -webkit-box-shadow: 0px -5px 8px black, 0px 5px 8px black;
+          box-shadow: 0px -5px 8px black, 0px 5px 8px black;
   padding: 80px 0;
   background: #92919163;
   position: relative;
@@ -505,7 +507,7 @@ header .line3, .blogHeader .line3, .aboutHeader .line3 {
 
 /*** footer ***/
 footer {
-  padding-bottom: 80px;
+  padding: 80px 0;
 }
 
 footer hr {
@@ -877,7 +879,6 @@ footer .container div .icons {
 }
 
 .projects .container .otherImg .images {
-  display: block;
   position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 30%;
@@ -905,5 +906,102 @@ footer .container div .icons {
   background: #e6fb04;
   -webkit-box-shadow: 2px 2px 1px #222;
           box-shadow: 2px 2px 1px #222;
+}
+
+.blog {
+  height: auto;
+  -webkit-box-shadow: 0px -5px 8px black, 0px 5px 8px black;
+          box-shadow: 0px -5px 8px black, 0px 5px 8px black;
+  background: -webkit-gradient(linear, left top, right top, from(#222), color-stop(50%, #222), color-stop(50%, #92919163), to(#92919163));
+  background: linear-gradient(to right, #222 0%, #222 50%, #92919163 50%, #92919163 100%);
+}
+
+.blog .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.blog .container div {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+  background-color: #222;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.blog .container div::after {
+  content: "posts";
+  position: absolute;
+  font-size: 8rem;
+  font-weight: 700;
+  bottom: -40px;
+  right: -18px;
+  color: #92919163;
+}
+
+.blog .container div article {
+  padding: 0 20px;
+  margin: 50px 50px 20px 0px;
+}
+
+.blog .container div article h5 {
+  font-size: 2.5rem;
+}
+
+.blog .container div article p:first-of-type {
+  margin: 20px 0;
+  border-bottom: 2px solid #e6fb04;
+  display: inline-block;
+}
+
+.blog .container div article button {
+  padding: 10px 20px;
+  background-color: #ffff00;
+  -webkit-box-shadow: 4px 4px 10px #e6fb04;
+          box-shadow: 4px 4px 10px #e6fb04;
+  border: none;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.blog .container div article button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.blog .container aside {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  background-color: #4d4c4c;
+  height: 100%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-weight: 200;
+  font-size: 2rem;
+  padding: 50px;
+  font-style: italic;
+}
+
+.blog .container aside ul li {
+  font-size: 1.2rem;
+  font-style: normal;
 }
 /*# sourceMappingURL=style.css.map */

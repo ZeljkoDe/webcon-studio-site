@@ -79,7 +79,7 @@ img {
 h3 {
   position: absolute;
   top: 53%;
-  font-size: clamp(1rem, calc(1.5vw + 1.5rem), 3rem);
+  font-size: clamp(1rem, calc(1.5vw + 1.8rem), 5rem);
   text-align: center;
   color: $neonYellow;
   text-shadow: -4px -4px 1px black;
@@ -195,6 +195,8 @@ header {
 
 /*** tech ***/
 .tech {
+  box-shadow: 0px -5px 8px black, 0px 5px 8px black;
+  // box-shadow: 0px 3px 5px black;
   padding: $padding;
   background: $bgLight;
   position: relative;
@@ -345,7 +347,8 @@ header {
 
 /*** footer ***/
 footer {
-  padding-bottom: 80px;
+  // padding-bottom: 80px;
+  padding: $padding;
   hr {
     border: 1px solid $neonGreen;
     box-shadow: 0 0 5px $green;
@@ -604,7 +607,6 @@ footer {
     .otherImg {
       grid-area: other;
       overflow: hidden;
-
       height: 25vh;
       @include flex(row, space-between, center);
       flex-wrap: nowrap;
@@ -636,7 +638,8 @@ footer {
         }
       }
       .images {
-        display: block;
+        // display: block;
+        // height: 100%;
         position: relative;
         flex: 0 0 30%;
         transition: transform 1.5s ease;
@@ -658,6 +661,76 @@ footer {
             // z-index: 2;
             // filter: grayscale(-100%);f
           }
+        }
+      }
+    }
+  }
+}
+
+.blog {
+  height: auto;
+  box-shadow: 0px -5px 8px black, 0px 5px 8px black;
+  background: linear-gradient(
+    to right,
+    $bgDark 0%,
+    $bgDark 50%,
+    $bgLight 50%,
+    $bgLight 100%
+  );
+  .container {
+    @include flex(row, space-between, flex-start);
+    div {
+      flex: 0 0 70%;
+      background-color: $bgDark;
+      // box-shadow: 50px 0px 5px black;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      // outline: 20px solid yellow;
+      // border: 1px solid white;
+      &::after {
+        content: "posts";
+        position: absolute;
+        font-size: 8rem;
+        font-weight: 700;
+        bottom: -40px;
+        right: -18px;
+        color: $bgLight;
+      }
+      article {
+        padding: 0 20px;
+        margin: 50px 50px 20px 0px;
+        // border-left: 1px solid $yellow;
+        // border-right: 1px solid $yellow;
+        h5 {
+          font-size: 2.5rem;
+        }
+        p:first-of-type {
+          margin: 20px 0;
+          // text-decoration: underline;
+          border-bottom: 2px solid $yellow;
+          display: inline-block;
+        }
+        button {
+          @include btn;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    aside {
+      flex: 0 0 30%;
+      // border: 1px solid white;
+      background-color: #4d4c4c;
+      height: 100%;
+      align-self: flex-start;
+      font-weight: 200;
+      font-size: 2rem;
+      padding: 50px;
+      font-style: italic;
+      ul {
+        li {
+          font-size: 1.2rem;
+          font-style: normal;
         }
       }
     }
