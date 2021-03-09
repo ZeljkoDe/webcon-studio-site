@@ -9,6 +9,10 @@
       "other other"
       "main info";
     grid-template-columns: 70% 1fr;
+    @media (max-width: 1080px) {
+      grid-template-columns: 100%;
+      gap: 0;
+    }
     .mainImg {
       grid-area: main;
       height: auto;
@@ -18,19 +22,16 @@
       padding: 20px;
       overflow: hidden;
       height: auto;
-      background-color: $bgDark;
-      color: $bgLight;
-      // box-shadow: 10px -10px 0 $neonYellow;
+      background-color: $clr-bg-dark;
+      color: $clr-bg-light;
       position: relative;
       .infoBg {
         font-size: 8rem;
-        // color: $neonYellow;
-        color: $bgLight;
+        color: $clr-bg-light;
         font-weight: 700;
         position: absolute;
         top: -55px;
         right: -10px;
-        // z-index: 3;
       }
       .textBox {
         width: 100%;
@@ -41,20 +42,15 @@
           "text1"
           "text2";
         grid-template-rows: 0.5fr 1fr 1fr;
-        // justify-content: fle;
-        // align-content: flex-end;
         h6 {
-          // flex: 0 0 50%;
           font-size: 1.2rem;
-          // text-decoration: underline;
-          border-bottom: 1px solid $yellow;
+          border-bottom: 1px solid $clr-primary;
           font-weight: 300;
         }
         p {
-          // flex: 0 0 50%;
           font-style: italic;
           font-size: 1.5rem;
-          color: $textClr;
+          color: $clr-text;
         }
         .text1 {
           grid-area: text1;
@@ -62,25 +58,29 @@
         }
         .text2 {
           grid-area: text2;
-          // align-content: top;
         }
+      }
+      @media (max-width: 1080px) {
+        display: none;
       }
     }
     .otherImg {
       grid-area: other;
       overflow: hidden;
-      height: 25vh;
+      // height: 25vh;
       @include flex(row, space-between, center);
       flex-wrap: nowrap;
       position: relative;
       .desno {
         position: absolute;
         font-size: 2.5rem;
-        color: $yellow;
+        color: $clr-primary;
         height: auto;
         width: 60px;
+        top: 50%;
+        transform: translateY(-50%);
         right: 0;
-        background: rgba(34, 34, 34, 0.87);
+        background: $clr-bg-dark;
         cursor: pointer;
         &:hover {
           font-size: 2rem;
@@ -89,19 +89,19 @@
       .levo {
         position: absolute;
         font-size: 2.5rem;
-        color: $yellow;
+        color: $clr-primary;
         height: auto;
         width: 60px;
         left: 0;
-        background: rgba(34, 34, 34, 0.87);
+        top: 50%;
+        transform: translateY(-50%);
+        background: $clr-bg-dark;
         &:hover {
           font-size: 2rem;
           cursor: pointer;
         }
       }
       .images {
-        // display: block;
-        // height: 100%;
         position: relative;
         flex: 0 0 30%;
         transition: transform 1.5s ease;
@@ -112,16 +112,14 @@
           &::after {
             content: "pro";
             font-size: 1.5rem;
-            color: $bgDark;
+            color: $clr-bg-dark;
             position: absolute;
             top: -5px;
             right: 20%;
             height: 50px;
             width: auto;
-            background: $yellow;
-            box-shadow: 2px 2px 1px $bgDark;
-            // z-index: 2;
-            // filter: grayscale(-100%);f
+            background: $clr-primary;
+            box-shadow: 2px 2px 1px $clr-bg-dark;
           }
         }
       }
